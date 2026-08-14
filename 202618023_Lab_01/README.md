@@ -1,123 +1,129 @@
-# LAB 01 – Web Scraping, Data Cleaning, and Exploratory Data Analysis
+# Book Data Scraping and Analysis
 
 ## Student Information
 
-- **Name:** Akbari Drashti
-- **Student ID:** 202618023
-- **Course:** M.Sc. Data Science
-- **Assignment:** Lab 01
+| Field | Details |
+|---|---|
+| **Student Name** | Drashti Akbari |
+| **Student ID** | 202618023 |
+| **Assignment** | Book Data Scraping and Analysis |
 
 ---
 
-## Project Overview
+## 1. Project Overview
 
-This project demonstrates a complete data science workflow involving:
+This project focuses on **web scraping, data preprocessing, exploratory data analysis, visualization, and interpretation** using the Books to Scrape website.
 
-1. Web scraping book data from the **Books to Scrape** website using **Scrapy**.
-2. Storing the scraped data in a CSV file.
-3. Cleaning and preprocessing the collected dataset.
-4. Performing Exploratory Data Analysis (EDA).
-5. Visualizing insights using Python visualization libraries.
+The project uses **Scrapy** to collect book information and **Pandas, Matplotlib, Seaborn, and WordCloud** for preprocessing and analysis.
 
-The project is implemented as a Jupyter Notebook and follows a structured, task-based approach.
+The main goal is to understand book prices, ratings, categories, stock availability, and descriptions, and to identify useful patterns from the scraped dataset.
 
 ---
 
-## Objectives
+## 2. Dataset
 
-- Learn the fundamentals of web scraping using Scrapy.
-- Collect structured data from a website.
-- Store scraped data in CSV format.
-- Clean and preprocess raw data.
-- Perform exploratory data analysis.
-- Generate meaningful visualizations and insights.
+### Source
+**Books to Scrape** — `books.toscrape.com`
+
+### Scraping Details
+
+- Data was scraped using a **Scrapy spider**.
+- The spider starts from page 1.
+- Pagination was followed up to **page 5**.
+- The scraped data was saved as `book_data.csv`.
+- The dataset contains **100 books**.
+
+### Main Attributes
+
+| Column | Description |
+|---|---|
+| `title` | Title of the book |
+| `category` | Book category |
+| `price` | Book price |
+| `rating` | Star rating |
+| `availability` | Stock/availability information |
+| `product_description` | Description of the book |
+| `UPC` | Unique product code |
+| `number_of_reviews` | Number of reviews |
+| `product_url` | URL of the book |
+| `stock_count` | Stock quantity used in analysis |
 
 ---
 
-## Technologies Used
+## 3. Technologies and Libraries Used
 
-- Python 3.x
-- Jupyter Notebook
-- Scrapy
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- WordCloud
+- **Python**
+- **Scrapy** – Web scraping
+- **Pandas** – Data preprocessing and analysis
+- **NumPy** – Numerical operations
+- **Matplotlib** – Data visualization
+- **Seaborn** – Statistical visualization
+- **WordCloud** – Text visualization
+- **Jupyter Notebook** – Development environment
 
 ---
 
-## Project Structure
+## 4. Project Details
 
-```
-LAB_01/
+### Task 1 – Data Scraping
+A Scrapy spider was created to collect book title, category, price, rating, availability, description, UPC, number of reviews, and product URL. The spider follows pagination from **page 1 to page 5** and saves the collected records to a CSV file.
+
+### Task 2 – Data Preprocessing
+The scraped data was cleaned by checking missing values and duplicates, removing extra spaces, handling missing values, removing duplicate UPC records, converting price and rating into suitable numeric formats, and creating additional features such as description word count and price bands.
+
+### Visualization and Analysis
+The project includes visualizations for price distribution, rating distribution, stock distribution, category patterns, price-rating relationships, average price by category, and a word cloud based on book descriptions.
+
+### Task 4 – Insights and Interpretation
+The analysis examines the relationship between price and rating, highly rated books, category representation, expensive categories, stock patterns, and books that provide better value.
+
+---
+
+## 5. Key Observations
+
+1. **Price does not show a strong relationship with rating.** Expensive books are not necessarily highly rated.
+2. **Books with a 5-star rating are the highest-rated books** in the dataset.
+3. **Book categories are not evenly represented.** Some categories contain many more books than others.
+4. **Average prices differ between categories**, with some categories being more expensive than others.
+5. **Books with high ratings and relatively low prices provide better value for money.**
+6. The dataset contains only **100 books from the first five pages**, so it may not represent the complete website.
+
+---
+
+## 6. Limitations
+
+- Only 100 books from the first five pages were scraped.
+- The dataset may not represent all books available on the website.
+- Customer review text was not available, so book descriptions were used for the word cloud.
+- The relationship between price and rating shows association and does not prove causation.
+- Category patterns are limited to the books included in the scraped pages.
+
+---
+
+## 7. Conclusion
+
+This project demonstrates a complete basic data-analysis workflow, from **web scraping and data collection** to **data preprocessing, feature creation, visualization, and interpretation**.
+
+The analysis shows that book price is not necessarily an indicator of rating. Categories differ in representation and average price, while books combining **higher ratings with relatively lower prices** can be considered better value.
+
+Overall, the project provides practical experience with **Scrapy and Python data-analysis libraries** for extracting and interpreting information from a real-world web dataset.
+
+---
+
+## 8. Project Structure
+
+```text
+Book-Data-Scraping-Analysis/
 │
-├── 202618023_LAB_01.ipynb     # Main notebook
-├── b_spider.py            # Scrapy spider (generated by notebook)
-├── book_data.csv           # Scraped dataset
-├── README.md                  # Project documentation
+├── README.md
+├── 23_lab(2).ipynb
+├── book_data.csv
+└── b_spider.py
 ```
-
----
-
-## Workflow
-
-1. Import required libraries.
-2. Create the Scrapy spider.
-3. Run the spider to scrape book information.
-4. Store the scraped data in a CSV file.
-5. Load the dataset using Pandas.
-6. Clean and preprocess the data.
-7. Perform exploratory data analysis.
-8. Visualize results and summarize findings.
-
----
-
-## Dataset
-
-The dataset is collected from:
-
-**https://books.toscrape.com**
-
-The scraped information includes attributes such as:
-
-- Book Title
-- Price
-- Rating
-- Availability
-- Product URL
-- Category (if available)
-
----
-
-## How to Run
-
-1. Open the notebook in **Jupyter Notebook** or **VS Code**.
-2. Ensure all required Python packages are installed.
-3. Run the notebook from the first cell to the last.
-4. The notebook automatically:
-   - Creates the Scrapy spider
-   - Scrapes the website
-   - Generates `scraped_data.csv`
-   - Performs data cleaning and analysis
-   - Displays visualizations
-
----
-
-## Learning Outcomes
-
-After completing this lab, I learned how to:
-
-- Build and execute a Scrapy spider.
-- Collect data from websites.
-- Store scraped data in CSV format.
-- Clean real-world datasets.
-- Perform exploratory data analysis.
-- Create informative visualizations using Python.
 
 ---
 
 ## Author
 
-**Akbari Drashti**  
-**Student ID:** 202618023
+**Drashti Akbari**  
+**Student ID: 202618023**
