@@ -22,7 +22,7 @@ The workflow includes:
 | Field | Details |
 |---|---|
 | **Name** | Drashti Akbari |
-| **Student ID** | 201618023 |
+| **Student ID** | 202618023 |
 | **Lab** | Lab_03 |
 | **Assignment Title** | Hotel Booking Cancellation Prediction |
 
@@ -249,4 +249,5 @@ Among the four experiments, **Decision Tree + Pipeline A (KNNImputer + StandardS
 StandardScaler had a small positive effect on Logistic Regression, while scaling had almost no effect on the Decision Tree. However, the Decision Tree showed a large gap between training and testing accuracy, indicating possible overfitting.
 
 Overall, the experiment demonstrates how preprocessing choices can affect different machine learning models and why both **performance metrics and overfitting should be considered when selecting the final model**.
-
+** NAME **:- Drashti Akbari
+** Student ID **:- 202618023
