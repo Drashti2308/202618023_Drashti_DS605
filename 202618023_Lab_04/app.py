@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-
+from pathlib import Path
 
 # --------------------------------------------------
 # Page configuration
@@ -19,9 +19,13 @@ st.set_page_config(
 # Load saved model
 # --------------------------------------------------
 
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "airbnb_price_model.pkl"
+
 @st.cache_resource
 def load_model():
-    return joblib.load("airbnb_price_model.pkl")
+    return joblib.load(MODEL_PATH)
 
 
 @st.cache_resource
