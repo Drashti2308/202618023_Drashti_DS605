@@ -1,5 +1,7 @@
 # Airbnb Price Prediction
 
+deployed link: https://202618023drashtids605-4eauchq5syzarhu9g7mtet.streamlit.app/
+
 ## Project Overview
 
 This project develops a machine learning system to predict the **nightly price of Airbnb listings in New York City** using the Airbnb NYC 2019 dataset.
