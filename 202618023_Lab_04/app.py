@@ -20,18 +20,20 @@ st.set_page_config(
 # --------------------------------------------------
 
 
+
+
 BASE_DIR = Path(__file__).resolve().parent
+
 MODEL_PATH = BASE_DIR / "airbnb_price_model.pkl"
+MODEL_INFO_PATH = BASE_DIR / "airbnb_model_info.pkl"
 
 @st.cache_resource
 def load_model():
     return joblib.load(MODEL_PATH)
 
-
-@st.cache_resource
+@st.cache_data
 def load_model_info():
-    return joblib.load("airbnb_model_info.pkl")
-
+    return joblib.load(MODEL_INFO_PATH)
 
 model = load_model()
 model_info = load_model_info()
