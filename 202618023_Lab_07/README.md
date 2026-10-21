@@ -16,7 +16,7 @@ Represent face images numerically, reduce their dimensionality using Principal C
 - Each image is converted to grayscale and flattened into a numerical feature vector.
 - Subject labels are retained for training and evaluation.
 
-> Place the extracted dataset in the location expected by the notebook, or update the dataset path in the notebook to match your environment.
+
 
 ## Workflow
 
