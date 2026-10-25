@@ -142,20 +142,7 @@ The lab uses:
 - **Matplotlib** for feature plots, decision boundaries, and model comparisons.
 - **Scikit-learn** for train-test splitting, standardization, reference models, synthetic data generation, and evaluation utilities.
 
-## How to Run
 
-1. Open `202618023_Lab_08(1).ipynb` in Jupyter Notebook or JupyterLab.
-2. Install the required libraries.
-3. Ensure the Banknote Authentication CSV file is in the expected location, or update the path in the notebook.
-4. Run notebook cells in order because later cells may depend on functions and variables defined earlier.
-5. Review the generated metrics, comparison tables, and visualizations.
-6. Base the final discussion on the actual outputs from the notebook. Do not substitute example values for measured results.
-
-Install the main dependencies with:
-
-```bash
-pip install numpy pandas matplotlib scikit-learn
-```
 
 ## Conclusion
 
